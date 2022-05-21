@@ -30,7 +30,8 @@ const useStyles = makeStyles((theme) => ({
       display: "block",
     },
     fontWeight: "700",
-    fontSize: "50px",
+    fontSize: "200%",
+    paddingLeft: "10px",
   },
   search: {
     position: "relative",
@@ -47,15 +48,7 @@ const useStyles = makeStyles((theme) => ({
       width: "auto",
     },
   },
-  searchIcon: {
-    padding: theme.spacing(0, 2),
-    height: "100%",
-    position: "absolute",
-    pointerEvents: "none",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-  },
+
   inputRoot: {
     color: "inherit",
   },
@@ -75,7 +68,7 @@ const useStyles = makeStyles((theme) => ({
       display: "flex",
     },
   },
-  logo: { width: "8%", padding: "2px" },
+  logo: { width: "12%", padding: "1%" },
   sectionMobile: {
     display: "flex",
     [theme.breakpoints.up("md")]: {
@@ -84,15 +77,14 @@ const useStyles = makeStyles((theme) => ({
   },
   MenuItem: {
     cursor: "default",
-    paddingTop: "40px",
-    paddingLeft: "30px",
-    fontSize: "30px",
+    paddingTop: "35px",
+    fontSize: "25px",
   },
   Item: { cursor: "pointer" },
-  PaddingRight: { paddingRight: "20px" },
+  PaddingRight: { paddingRight: "50px" },
 }));
 
-export default function PrimarySearchAppBar() {
+export default function PrimarySearchAppBar({ widthPx }) {
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
@@ -178,23 +170,23 @@ export default function PrimarySearchAppBar() {
     <div className={classes.grow}>
       <AppBar position="static">
         <Toolbar>
-          <IconButton
+          {/* <IconButton
             edge="start"
             className={classes.menuButton}
             color="inherit"
             aria-label="open drawer"
           >
             <MenuIcon />
-          </IconButton>
-          <img className={classes.logo} src={companyLogo}></img>
+          </IconButton> */}
+          <div style={{ display: "flex", alignItems: "center" }}>
+            <img className={classes.logo} src={companyLogo}></img>
 
-          <Typography className={classes.title} variant="h6" noWrap>
-            SANEYMANN
-          </Typography>
+            <span className={classes.title}>SANEYMANN</span>
+          </div>
           <div
             style={{
               display: "flex",
-              width: "50%",
+              width: "74%",
               justifyContent: "flex-end",
             }}
           >
